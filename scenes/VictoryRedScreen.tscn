@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnslodrtxd5wd"]
+
+[ext_resource type="Texture2D" uid="uid://vv6lyel8wcwe" path="res://assets/wallpaper.png" id="1_oajeu"]
+[ext_resource type="Script" path="res://scenes/ReturnButton.gd" id="2_6pvp7"]
+
+[node name="VictoryRedScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1161.0
+offset_bottom = 660.0
+texture = ExtResource("1_oajeu")
+
+[node name="WinnerLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 196.0
+offset_right = 546.0
+offset_bottom = 283.0
+theme_override_colors/font_color = Color(0.769343, 0.0764912, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.783453, 0.513912, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "VITÓRIA 
+PONGFIGHTER VERMELHO!"
+horizontal_alignment = 1
+
+[node name="ReturnButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 752.0
+offset_top = 201.0
+offset_right = 896.0
+offset_bottom = 260.0
+theme_override_font_sizes/font_size = 20
+text = "VOLTAR"
+script = ExtResource("2_6pvp7")
+
+[connection signal="pressed" from="ReturnButton" to="ReturnButton" method="_on_pressed"]

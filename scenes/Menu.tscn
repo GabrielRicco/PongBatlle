@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbyxyo1u5pdia"]
+
+[ext_resource type="Texture2D" uid="uid://vv6lyel8wcwe" path="res://assets/wallpaper.png" id="1_o3cqw"]
+[ext_resource type="Script" path="res://scenes/VsIAButton.gd" id="2_dliyo"]
+[ext_resource type="Script" path="res://scenes/MultiplayerButton.gd" id="3_r3j5f"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 655.0
+texture = ExtResource("1_o3cqw")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 211.0
+offset_right = 504.0
+offset_bottom = 282.0
+theme_override_font_sizes/font_size = 30
+text = "PONG BATLLE"
+horizontal_alignment = 1
+
+[node name="VsIAButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 702.0
+offset_top = 167.0
+offset_right = 860.0
+offset_bottom = 228.0
+text = "VS IA"
+script = ExtResource("2_dliyo")
+
+[node name="MultiplayerButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 701.0
+offset_top = 268.0
+offset_right = 865.0
+offset_bottom = 336.0
+text = "MULTIPLAYER"
+script = ExtResource("3_r3j5f")
+
+[connection signal="pressed" from="VsIAButton" to="VsIAButton" method="_on_pressed"]
+[connection signal="pressed" from="MultiplayerButton" to="MultiplayerButton" method="_on_pressed"]
